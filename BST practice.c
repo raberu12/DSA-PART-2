@@ -53,7 +53,7 @@ void insert(BST *T, int label) {
 	BST temp;
 	BST *trav;
 	for(trav = T; *trav != NULL && (*trav)->label != label;) {
-		trav = ((*trav)->label < label) ? &(*trav)->right : &(*trav)->left;
+		trav = (*trav)->label > label ? &(*trav)->left : &(*trav)->right;
 	}
 	if(*trav == NULL) {
 		temp = (BST)malloc(sizeof(treeNode));
